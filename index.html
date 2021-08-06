@@ -233,6 +233,8 @@ Error message and password prompt
 
 <li>data-character-descriptions</li>
 
+<li>Draft of 'Other Character Template'</li>
+
 <li>Draft of 'Reidon Ward 1'</li>
 
 <li>Edit Abilities Button Template</li>
@@ -10269,7 +10271,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210806052740471" list="[[Other Character Template]] [[Staff Template]] [[Draft of 'Reidon Ward 1']] [[Salista Ethalees Laurent]] Home [[All Characters]] [[Reidon Ward]]" modified="20210806062957079" title="$:/StoryList">
+<div created="20210806052740471" list="[[Draft of 'Other Character Template']] [[Staff Template]] [[Draft of 'Reidon Ward 1']] [[Salista Ethalees Laurent]] Home [[All Characters]] [[Reidon Ward]]" modified="20210806062957079" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210805142204346" title="$:/theme">
@@ -10477,6 +10479,22 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
     &quot;Salista Ethalees Laurent&quot;: &quot;* Auburn Hair\n* Golden Eyes&quot;
 }</pre>
 </div>
+<div character.has_cad="no" created="20210805160504288" draft.of="Other Character Template" draft.title="Other Character Template" modified="20210806063818559" tags="Template" title="Draft of 'Other Character Template'">
+<pre>! Other Character Data
+&lt;$set name=&quot;isNotDraft&quot; filter=&quot;[all[current]is[draft]then[no]else[yes]]&quot; &gt;
+
+|!Name |{{!!title}} |
+|!Physical Description {{||Edit Description Button Template}} |{{||Physical Description Template}} |
+|!Has CAD | &lt;$checkbox field=&quot;character.has_cad&quot; checked=&quot;yes&quot; unchecked=&quot;no&quot; disabled=&lt;&lt;isNotDraft&gt;&gt; /&gt; |
+&lt;/$set&gt;
+
+&lt;$reveal type=&quot;match&quot; state=&quot;!!character.has_cad&quot; text=&quot;yes&quot;&gt;
+
+{{||CAD Template}}
+
+&lt;/$reveal&gt;
+!! Other Details</pre>
+</div>
 <div cad.color.primary="" cad.color.secondary="" cad.color.vysetrium="" cad.name="" cad.type="Phalanx" cad.weapon="Spear" created="20210806062059718" draft.of="Reidon Ward 1" draft.title="Aria Laurent" modified="20210806062533097" tags="Student Character" title="Draft of 'Reidon Ward 1'">
 <pre>{{||Student Template}}
 * Lives on an estate in static orbit over [[Astra-3]]
@@ -10645,13 +10663,15 @@ Developed by the [[ISCM]]. Applied? in the early 24^^th^^ century.</pre>
 <div created="20210805185616615" modified="20210805201749272" tags="" title="Staff List">
 <pre>&lt;&lt;list-links &quot;[tag[Staff]]+[sort[title]]&quot;&gt;&gt;</pre>
 </div>
-<div character.has_cad="no" created="20210805142747908" modified="20210806061031200" staff.position="SOME_POSITION" tags="Template" title="Staff Template">
+<div character.has_cad="no" created="20210805142747908" modified="20210806063823769" staff.position="SOME_POSITION" tags="Template" title="Staff Template">
 <pre>! Staff Member Data
+&lt;$set name=&quot;isNotDraft&quot; filter=&quot;[all[current]is[draft]then[no]else[yes]]&quot; &gt;
 
 |!Name |{{!!title}} |
 |!Physical Description {{||Edit Description Button Template}} |{{||Physical Description Template}} |
 |!Position |{{!!staff.position}} |
-|!Has CAD | &lt;$checkbox field=&quot;character.has_cad&quot; checked=&quot;yes&quot; unchecked=&quot;no&quot; /&gt; |
+|!Has CAD | &lt;$checkbox field=&quot;character.has_cad&quot; checked=&quot;yes&quot; unchecked=&quot;no&quot; disabled=&lt;&lt;isNotDraft&gt;&gt; /&gt; |
+&lt;/$set&gt;
 
 &lt;$reveal type=&quot;match&quot; state=&quot;!!character.has_cad&quot; text=&quot;yes&quot;&gt;
 
