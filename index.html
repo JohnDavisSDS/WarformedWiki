@@ -10269,7 +10269,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210806052740471" list="[[Draft of 'Reidon Ward 1']] [[Salista Ethalees Laurent]] Home [[All Characters]] [[Reidon Ward]]" modified="20210806062616603" title="$:/StoryList">
+<div created="20210806052740471" list="[[Other Character Template]] [[Staff Template]] [[Draft of 'Reidon Ward 1']] [[Salista Ethalees Laurent]] Home [[All Characters]] [[Reidon Ward]]" modified="20210806062957079" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210805142204346" title="$:/theme">
@@ -10587,11 +10587,14 @@ The military branch of the [[ISC]], largely independent due to the success of [[
 <div caption="Template - Other Character" created="20210805190530474" modified="20210805190649826" tags="$:/tags/TextEditor/Snippet" title="Other Character Snippet">
 <pre>{{||Other Character Template}}</pre>
 </div>
-<div character.has_cad="no" created="20210805160504288" modified="20210806060917652" tags="Template" title="Other Character Template">
+<div character.has_cad="no" created="20210805160504288" modified="20210806063516090" tags="Template" title="Other Character Template">
 <pre>! Other Character Data
+&lt;$set name=&quot;isNotDraft&quot; filter=&quot;[all[current]get[draft.of]is[missing]then[yes]else[no]]&quot; &gt;
+
 |!Name |{{!!title}} |
 |!Physical Description {{||Edit Description Button Template}} |{{||Physical Description Template}} |
-|!Has CAD | &lt;$checkbox field=&quot;character.has_cad&quot; checked=&quot;yes&quot; unchecked=&quot;no&quot; /&gt; |
+|!Has CAD | &lt;$checkbox field=&quot;character.has_cad&quot; checked=&quot;yes&quot; unchecked=&quot;no&quot; disabled=&lt;&lt;isNotDraft&gt;&gt; /&gt; |
+&lt;/$set&gt;
 &lt;$reveal type=&quot;match&quot; state=&quot;!!character.has_cad&quot; text=&quot;yes&quot;&gt;
 
 {{||CAD Template}}
@@ -10626,7 +10629,7 @@ The military branch of the [[ISC]], largely independent due to the success of [[
 * Attended [[Grandcrest Prep]]
 * Born with black hair, it turned white from trauma/stress of multiple surgeries</pre>
 </div>
-<div created="20210806062622657" modified="20210806062754864" tags="[[Other Character]] Character" title="Salista Ethalees Laurent">
+<div character.has_cad="no" created="20210806062622657" modified="20210806063511585" tags="[[Other Character]] Character" title="Salista Ethalees Laurent">
 <pre>{{||Other Character Template}}
 * Spouse: [[Carmen Laurent]]
 * Children: [[Aria Laurent]], [[Kalus Laurent]], [[Amina Laurent]]</pre>
