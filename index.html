@@ -10316,7 +10316,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210806052740471" list="Terms [[All Characters]]" modified="20210806081414545" title="$:/StoryList">
+<div created="20210806052740471" list="Terms [[All Characters]]" modified="20210806084650874" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210805142204346" title="$:/theme">
@@ -10476,9 +10476,9 @@ Instructions for creating a personal token can be found [[here|https://docs.gith
 <pre>{{||Student Template}}
 * Received [[CAD]] at 2468 CAD Assignment Exam at [[Grandcrest Prep]]</pre>
 </div>
-<div created="20210805192201937" modified="20210806084639763" title="All Characters">
+<div created="20210805192201937" modified="20210806090235057" title="All Characters">
 <pre>\define compare-by-last-name()
-[&lt;currentTiddler&gt;search-replace:i:regexp[(.*)(\s\w+$)],[$2, $1]]
+[&lt;currentTiddler&gt;search-replace:i:regexp[((?:.*\s)|^)(\w+$)],[$2, $1]]
 \end
 
 &lt;ul&gt;
