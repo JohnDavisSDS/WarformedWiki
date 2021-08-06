@@ -10335,7 +10335,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210806052740471" list="[[John Markus]] Terms [[All Characters]]" modified="20210806091945143" title="$:/StoryList">
+<div created="20210806052740471" list="[[Staff Template]] [[Other Character Template]] [[Galens Student Template]] [[Student Template]] Terms [[All Characters]]" modified="20210806092258284" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210805142204346" title="$:/theme">
@@ -10887,8 +10887,16 @@ Developed by the [[ISCM]]. Applied? in the early 24^^th^^ century.</pre>
 <div created="20210805185616615" modified="20210805201749272" tags="" title="Staff List">
 <pre>&lt;&lt;list-links &quot;[tag[Staff]]+[sort[title]]&quot;&gt;&gt;</pre>
 </div>
-<div character.has_cad="no" created="20210805142747908" modified="20210806091818703" staff.position="SOME_POSITION" tags="Template" title="Staff Template">
-<pre>! Staff Member Data
+<div character.has_cad="no" created="20210805142747908" modified="20210806092634479" staff.position="SOME_POSITION" tags="Template" title="Staff Template">
+<pre>&lt;$list filter=&quot;[all[current]is[draft]]&quot; &gt;
+&lt;$fieldmangler&gt;
+&lt;$button message=&quot;tm-add-tag&quot; param=&quot;Character&quot;&gt;Add Character Tag&lt;/$button&gt;
+&lt;$button message=&quot;tm-add-tag&quot; param=&quot;Staff&quot;&gt;Add Staff Tag&lt;/$button&gt;
+&lt;$button message=&quot;tm-add-tag&quot; param=&quot;Galens Institute&quot;&gt;Add Galens Institute Tag&lt;/$button&gt;
+&lt;/$fieldmangler&gt;
+&lt;/$list&gt;
+
+! Staff Member Data
 &lt;$set name=&quot;isNotDraft&quot; filter=&quot;[all[current]is[draft]then[no]else[yes]]&quot; &gt;
 
 |!Name |{{!!title}} |
