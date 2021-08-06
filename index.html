@@ -10474,7 +10474,7 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
 &lt;$action-sendmessage $message=&quot;tm-modal&quot; $param=&quot;modal-edit-abilities&quot; character={{!!title}} /&gt;
 &lt;/$button&gt;</pre>
 </div>
-<div created="20210805212809090" modified="20210806060335400" tags="Template Button" title="Edit Description Button Template">
+<div created="20210805212809090" modified="20210806060505675" tags="Template Button" title="Edit Description Button Template">
 <pre>\whitespace trim
 &lt;$button tooltip=&quot;Edit this description&quot; aria-label={{$:/language/Buttons/Edit/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 
@@ -10493,7 +10493,7 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
 &lt;$action-sendmessage $message=&quot;tm-modal&quot; $param=&quot;modal-edit-description&quot; character=&lt;&lt;title&gt;&gt; /&gt;
 &lt;/$list&gt;
 
-&lt;$list filter=&quot;[all[current]-has[draft.title]get[title]]&quot; variable=&quot;title&quot; &gt;
+&lt;$list filter=&quot;[all[current]!has[draft.title]get[title]]&quot; variable=&quot;title&quot; &gt;
 &lt;$action-sendmessage $message=&quot;tm-modal&quot; $param=&quot;modal-edit-description&quot; character=&lt;&lt;title&gt;&gt; /&gt;
 &lt;/$list&gt;
 
