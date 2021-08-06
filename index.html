@@ -10259,7 +10259,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210806035836356" list="[[William Errie]] Home [[Other Characters]] [[Ansley Kosh]]" modified="20210806044822456" title="$:/StoryList">
+<div created="20210806052740471" list="[[Edit Description Button Template]] Home" modified="20210806052740471" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210805142204346" title="$:/theme">
@@ -10472,19 +10472,27 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
 &lt;$action-sendmessage $message=&quot;tm-modal&quot; $param=&quot;modal-edit-abilities&quot; character={{!!title}} /&gt;
 &lt;/$button&gt;</pre>
 </div>
-<div created="20210805212809090" modified="20210805220548485" tags="Template Button" title="Edit Description Button Template">
+<div created="20210805212809090" modified="20210806054017222" tags="Template Button" title="Edit Description Button Template">
 <pre>\whitespace trim
 &lt;$button tooltip=&quot;Edit this description&quot; aria-label={{$:/language/Buttons/Edit/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+
 &lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
 {{$:/core/images/edit-button}}
 &lt;/$list&gt;
+
 &lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
 &lt;span class=&quot;tc-btn-text&quot;&gt;
 &lt;$text text=&quot; &quot;/&gt;
 &lt;$text text={{$:/language/Buttons/Edit/Caption}}/&gt;
 &lt;/span&gt;
 &lt;/$list&gt;
-&lt;$action-sendmessage $message=&quot;tm-modal&quot; $param=&quot;modal-edit-description&quot; character={{!!title}} /&gt;
+
+&lt;$list filter=&quot;[all[current]fields:include[draft.title title]first[]]&quot; variable=&quot;prop&quot; &gt;
+&lt;$set name=&quot;value&quot; tiddler={{!!draft.title}} field=&lt;&lt;prop&gt;&gt; &gt;
+&lt;$action-sendmessage $message=&quot;tm-modal&quot; $param=&quot;modal-edit-description&quot; character=&lt;&lt;value&gt;&gt; /&gt;
+&lt;/$set&gt;
+&lt;/$list&gt;
+
 &lt;/$button&gt;</pre>
 </div>
 <div created="20210805194137766" modified="20210805194432121" tags="Place" title="Estoran Center for Children">
