@@ -10335,7 +10335,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210806052740471" list="[[Other Character Template]] [[Galens Student Template]] [[Student Template]] Terms [[All Characters]]" modified="20210806092258284" title="$:/StoryList">
+<div created="20210806052740471" list="[[Galens Student Template]] [[Student Template]] Terms [[All Characters]]" modified="20210806092258284" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210805142204346" title="$:/theme">
@@ -10929,8 +10929,15 @@ Developed by the [[ISCM]]. Applied? in the early 24^^th^^ century.</pre>
 <div created="20210805185959338" modified="20210805201805005" title="Student List">
 <pre>&lt;&lt;list-links &quot;[tag[Student]]+[sort[title]]&quot;&gt;&gt;</pre>
 </div>
-<div created="20210805142320059" modified="20210806080237071" student.class_block="e.g. 1-B" student.school="e.g. Galens Academy" tags="Template" title="Student Template">
-<pre>! Student Data
+<div created="20210805142320059" modified="20210806092744968" student.class_block="e.g. 1-B" student.school="e.g. Galens Academy" tags="Template" title="Student Template">
+<pre>&lt;$list filter=&quot;[all[current]is[draft]]&quot; &gt;
+&lt;$fieldmangler&gt;
+&lt;$button message=&quot;tm-add-tag&quot; param=&quot;Character&quot;&gt;Add Character Tag&lt;/$button&gt;
+&lt;$button message=&quot;tm-add-tag&quot; param=&quot;Student&quot;&gt;Add Student Tag&lt;/$button&gt;
+&lt;/$fieldmangler&gt;
+&lt;/$list&gt;
+
+! Student Data
 |!Name |{{!!title}} |
 |!Physical Description {{||Edit Description Button Template}} |{{||Physical Description Template}} |
 |!School |&lt;&lt;school&gt;&gt; |
