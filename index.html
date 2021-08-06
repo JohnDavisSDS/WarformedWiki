@@ -10566,12 +10566,12 @@ The military branch of the [[ISC]], largely independent due to the success of [[
 <div created="20210805190046282" modified="20210805201821253" title="Other Characters">
 <pre>&lt;&lt;list-links &quot;[tag[Other Character]]+[sort[title]]&quot;&gt;&gt;</pre>
 </div>
-<div created="20210806054142935" modified="20210806060127095" tags="Template" title="Physical Description Template">
+<div created="20210806054142935" modified="20210806060513690" tags="Template" title="Physical Description Template">
 <pre>&lt;$list filter=&quot;[all[current]has[draft.title]get[draft.title]]&quot; variable=&quot;title&quot; &gt;
 &lt;$transclude tiddler=&quot;data-character-descriptions&quot; index=&lt;&lt;title&gt;&gt;mode=&quot;block&quot;/&gt;
 &lt;/$list&gt;
 
-&lt;$list filter=&quot;[all[current]-has[draft.title]get[title]]&quot; variable=&quot;title&quot; &gt;
+&lt;$list filter=&quot;[all[current]!has[draft.title]get[title]]&quot; variable=&quot;title&quot; &gt;
 &lt;$transclude tiddler=&quot;data-character-descriptions&quot; index=&lt;&lt;title&gt;&gt;mode=&quot;block&quot;/&gt;
 &lt;/$list&gt;</pre>
 </div>
