@@ -235,8 +235,6 @@ Error message and password prompt
 
 <li>Draft of 'CAD Template'</li>
 
-<li>Draft of 'Physical Description Template'</li>
-
 <li>Edit Abilities Button Template</li>
 
 <li>Edit Description Button Template</li>
@@ -10267,7 +10265,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210806052740471" list="[[Abilities Template]] data-cad-abilities [[Draft of 'Physical Description Template']] [[Draft of 'CAD Template']] data-character-descriptions Home [[All Characters]]" modified="20210806061240361" title="$:/StoryList">
+<div created="20210806052740471" list="[[Abilities Template]] data-cad-abilities [[Draft of 'CAD Template']] data-character-descriptions Home [[All Characters]]" modified="20210806061552114" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210805142204346" title="$:/theme">
@@ -10382,12 +10380,14 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20210806061435002" modified="20210806061512420" tags="Template" title="Abilities Template">
+<div created="20210806061435002" modified="20210806061635322" tags="Template" title="Abilities Template">
 <pre>&lt;$list filter=&quot;[all[current]has[draft.title]get[draft.title]]&quot; variable=&quot;title&quot; &gt;
+&lt;&lt;title&gt;&gt;
 &lt;$transclude tiddler=&quot;data-cad-abilities&quot; index=&lt;&lt;title&gt;&gt;mode=&quot;block&quot;/&gt;
 &lt;/$list&gt;
 
 &lt;$list filter=&quot;[all[current]!has[draft.title]get[title]]&quot; variable=&quot;title&quot; &gt;
+&lt;&lt;title&gt;&gt;
 &lt;$transclude tiddler=&quot;data-cad-abilities&quot; index=&lt;&lt;title&gt;&gt;mode=&quot;block&quot;/&gt;
 &lt;/$list&gt;</pre>
 </div>
@@ -10472,7 +10472,7 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
     &quot;William Errie&quot;: &quot;* 6'4\n* 232 lb&quot;
 }</pre>
 </div>
-<div cad.abilities="* Repulsion" cad.color.primary="e.g. Blue" cad.color.secondary="e.g. Red" cad.color.vysetrium="e.g. White" cad.name="SAMPLE_NAME" cad.rank="e.g. F8" cad.type="e.g. Mauler" cad.weapon="e.g. Hammer" created="20210805155059520" draft.of="CAD Template" draft.title="CAD Template" modified="20210806061414880" tags="Template" title="Draft of 'CAD Template'">
+<div cad.abilities="* Repulsion" cad.color.primary="e.g. Blue" cad.color.secondary="e.g. Red" cad.color.vysetrium="e.g. White" cad.name="SAMPLE_NAME" cad.rank="e.g. F8" cad.type="e.g. Mauler" cad.weapon="e.g. Hammer" created="20210805155059520" draft.of="CAD Template" draft.title="CAD Template" modified="20210806061531918" tags="Template" title="Draft of 'CAD Template'">
 <pre>!! CAD Data
 |!Name |{{!!cad.name}} |
 |!Type |{{!!cad.type}} |
@@ -10481,16 +10481,7 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
 |!Secondary Color |{{!!cad.color.secondary}} |
 |!Vysetrium Color |{{!!cad.color.vysetrium}} |
 |!Weapon |{{!!cad.weapon}} |
-|!Abilities {{||Edit Abilities Button Template}} |&lt;$transclude tiddler=&quot;data-cad-abilities&quot; index={{!!title}} mode=&quot;block&quot;/&gt; |</pre>
-</div>
-<div created="20210806054142935" draft.of="Physical Description Template" draft.title="Physical Description Template" modified="20210806061416853" tags="Template" title="Draft of 'Physical Description Template'">
-<pre>&lt;$list filter=&quot;[all[current]has[draft.title]get[draft.title]]&quot; variable=&quot;title&quot; &gt;
-&lt;$transclude tiddler=&quot;data-character-descriptions&quot; index=&lt;&lt;title&gt;&gt;mode=&quot;block&quot;/&gt;
-&lt;/$list&gt;
-
-&lt;$list filter=&quot;[all[current]!has[draft.title]get[title]]&quot; variable=&quot;title&quot; &gt;
-&lt;$transclude tiddler=&quot;data-character-descriptions&quot; index=&lt;&lt;title&gt;&gt;mode=&quot;block&quot;/&gt;
-&lt;/$list&gt;</pre>
+|!Abilities {{||Edit Abilities Button Template}} |{{!!Abilities Template}} |</pre>
 </div>
 <div created="20210806000233927" modified="20210806061343107" tags="Template Button" title="Edit Abilities Button Template">
 <pre>\whitespace trim
