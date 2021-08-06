@@ -10261,7 +10261,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210806052740471" list="[[Staff Template]] data-character-descriptions Home [[All Characters]]" modified="20210806061011376" title="$:/StoryList">
+<div created="20210806052740471" list="data-cad-abilities [[Physical Description Template]] [[CAD Template]] [[Edit Abilities Button Template]] [[Edit Description Button Template]] data-character-descriptions Home [[All Characters]]" modified="20210806061240361" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210805142204346" title="$:/theme">
@@ -10457,19 +10457,29 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
     &quot;William Errie&quot;: &quot;* 6'4\n* 232 lb&quot;
 }</pre>
 </div>
-<div created="20210806000233927" modified="20210806000320463" tags="Template Button" title="Edit Abilities Button Template">
+<div created="20210806000233927" modified="20210806061343107" tags="Template Button" title="Edit Abilities Button Template">
 <pre>\whitespace trim
 &lt;$button tooltip=&quot;Edit CAD abilities&quot; aria-label={{$:/language/Buttons/Edit/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+
 &lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
 {{$:/core/images/edit-button}}
 &lt;/$list&gt;
+
 &lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
 &lt;span class=&quot;tc-btn-text&quot;&gt;
 &lt;$text text=&quot; &quot;/&gt;
 &lt;$text text={{$:/language/Buttons/Edit/Caption}}/&gt;
 &lt;/span&gt;
 &lt;/$list&gt;
-&lt;$action-sendmessage $message=&quot;tm-modal&quot; $param=&quot;modal-edit-abilities&quot; character={{!!title}} /&gt;
+
+&lt;$list filter=&quot;[all[current]has[draft.title]get[draft.title]]&quot; variable=&quot;title&quot; &gt;
+&lt;$action-sendmessage $message=&quot;tm-modal&quot; $param=&quot;modal-edit-abilities&quot; character=&lt;&lt;title&gt;&gt; /&gt;
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[all[current]!has[draft.title]get[title]]&quot; variable=&quot;title&quot; &gt;
+&lt;$action-sendmessage $message=&quot;tm-modal&quot; $param=&quot;modal-edit-abilities&quot; character=&lt;&lt;title&gt;&gt; /&gt;
+&lt;/$list&gt;
+
 &lt;/$button&gt;</pre>
 </div>
 <div created="20210805212809090" modified="20210806060505675" tags="Template Button" title="Edit Description Button Template">
