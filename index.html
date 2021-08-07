@@ -325,10 +325,6 @@ Error message and password prompt
 
 <li>data-character-descriptions</li>
 
-<li>Draft of 'Edit Abilities Button Template'</li>
-
-<li>Draft of 'macro-helpers'</li>
-
 <li>Dyrk Reese</li>
 
 <li>Edit Abilities Button Template</li>
@@ -10501,7 +10497,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210807031656604" list="[[CAD Template]] modal-edit-description Template [[Draft of 'Edit Abilities Button Template']] [[Draft of 'macro-helpers']] data-cad-abilities Home [[All Characters]] [[Viviana Arada]]" modified="20210807110909519" title="$:/StoryList">
+<div created="20210807031656604" list="[[CAD Template]] Template macro-helpers data-cad-abilities Home [[All Characters]] [[Viviana Arada]]" modified="20210807110909519" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210807031841799" title="$:/theme">
@@ -10862,71 +10858,6 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
     &quot;Dyrk Reese&quot;: &quot;* Older\n* Deep Set Eyes\n* Shaved Head&quot;
 }</pre>
 </div>
-<div created="20210806000233927" draft.of="Edit Abilities Button Template" draft.title="Edit Abilities Button Template" modified="20210807101040870" tags="Template Button" title="Draft of 'Edit Abilities Button Template'">
-<pre>\whitespace trim
-&lt;$button tooltip=&quot;Edit CAD abilities&quot; aria-label={{$:/language/Buttons/Edit/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
-
-&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
-{{$:/core/images/edit-button}}
-&lt;/$list&gt;
-
-&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
-&lt;span class=&quot;tc-btn-text&quot;&gt;
-&lt;$text text=&quot; &quot;/&gt;
-&lt;$text text={{$:/language/Buttons/Edit/Caption}}/&gt;
-&lt;/span&gt;
-&lt;/$list&gt;
-
-&lt;$list filter=&quot;[all[current]has[draft.title]get[draft.title]]&quot; variable=&quot;title&quot; &gt;
-&lt;$action-sendmessage $message=&quot;tm-modal&quot; $param=&quot;modal-edit-abilities&quot; character=&lt;&lt;title&gt;&gt; /&gt;
-&lt;/$list&gt;
-
-&lt;$list filter=&quot;[all[current]!has[draft.title]get[title]]&quot; variable=&quot;title&quot; &gt;
-&lt;$action-sendmessage $message=&quot;tm-modal&quot; $param=&quot;modal-edit-abilities&quot; character=&lt;&lt;title&gt;&gt; /&gt;
-&lt;/$list&gt;
-
-&lt;/$button&gt;</pre>
-</div>
-<div created="20210807091417362" draft.of="macro-helpers" draft.title="macro-helpers" modified="20210807110814246" tags="$:/tags/Macro" title="Draft of 'macro-helpers'">
-<pre>\whitespace trim
-
-\define macro-regex-last-name-sort() ((?:.*\s)|^)([^ ]+$)
-\define macro-regex-last-name-sub() (.*)(\s[^ ]+$)
-
-\define macro-last-name-sort()
-[&lt;currentTiddler&gt;search-replace:i:regexp&lt;macro-regex-last-name-sort&gt;,[$2, $1]]
-\end
-
-\define macro-link-list-by-last-name(filter: &quot;tag[Filter Operators]&quot;)
-&lt;ul&gt;
-&lt;$list filter=&quot;[$filter$sortsub&lt;macro-last-name-sort&gt;]&quot;&gt;
-&lt;li&gt;&lt;$link&gt;&lt;$text text={{{[&lt;currentTiddler&gt;search-replace:i:regexp&lt;macro-regex-last-name-sub&gt;,[$2, $1]]}}}/&gt;&lt;/$link&gt;&lt;/li&gt;
-&lt;/$list&gt;
-&lt;/ul&gt;
-\end
-
-\define macro-data-tiddler-index-by-title(dataTiddler)
-&lt;$list filter=&quot;[all[current]is[draft]get[draft.title]]&quot; variable=&quot;title&quot; &gt;
-&lt;$transclude tiddler=&quot;$dataTiddler$&quot; index=&lt;&lt;title&gt;&gt;mode=&quot;block&quot;/&gt;
-&lt;/$list&gt;
-
-&lt;$list filter=&quot;[all[current]!is[draft]get[title]]&quot; variable=&quot;title&quot; &gt;
-&lt;$transclude tiddler=&quot;$dataTiddler$&quot; index=&lt;&lt;title&gt;&gt;mode=&quot;block&quot;/&gt;
-&lt;/$list&gt;
-\end
-
-\define macro-edit-display-data-tiddler(dataTiddler)
-
-&lt;$list filter=&quot;[all[current]is[draft]get[draft.title]]&quot; variable=&quot;title&quot; &gt;
-&lt;$edit-text tiddler=&quot;$dataTiddler$&quot; index=&lt;&lt;title&gt;&gt; /&gt;
-&lt;/$list&gt;
-
-&lt;$list filter=&quot;[all[current]!is[draft]get[title]]&quot; variable=&quot;title&quot; &gt;
-&lt;$transclude tiddler=&quot;$dataTiddler$&quot; index=&lt;&lt;title&gt;&gt;mode=&quot;block&quot;/&gt;
-&lt;/$list&gt;
-
-\end</pre>
-</div>
 <div character.has_cad="yes" created="20210806090859937" modified="20210806091956946" staff.position="SCT Coordinator" tags="Character Staff [[Galens Institute]]" title="Dyrk Reese">
 <pre>{{||Staff Template}}
 * Major in the [[ISCM]]</pre>
@@ -11107,7 +11038,7 @@ The military branch of the [[ISC]], largely independent due to the success of [[
 <pre>{{||Galens Student Template}}
 * Attended the [[Kanhurst School]] on [[Centauri-4]]</pre>
 </div>
-<div created="20210807091417362" modified="20210807101733210" tags="$:/tags/Macro" title="macro-helpers">
+<div created="20210807091417362" modified="20210807111022677" tags="$:/tags/Macro" title="macro-helpers">
 <pre>\whitespace trim
 
 \define macro-regex-last-name-sort() ((?:.*\s)|^)([^ ]+$)
@@ -11133,6 +11064,18 @@ The military branch of the [[ISC]], largely independent due to the success of [[
 &lt;$list filter=&quot;[all[current]!is[draft]get[title]]&quot; variable=&quot;title&quot; &gt;
 &lt;$transclude tiddler=&quot;$dataTiddler$&quot; index=&lt;&lt;title&gt;&gt;mode=&quot;block&quot;/&gt;
 &lt;/$list&gt;
+\end
+
+\define macro-edit-display-data-tiddler(dataTiddler)
+
+&lt;$list filter=&quot;[all[current]is[draft]get[draft.title]]&quot; variable=&quot;title&quot; &gt;
+&lt;$edit-text tiddler=&quot;$dataTiddler$&quot; index=&lt;&lt;title&gt;&gt; /&gt;
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[all[current]!is[draft]get[title]]&quot; variable=&quot;title&quot; &gt;
+&lt;$transclude tiddler=&quot;$dataTiddler$&quot; index=&lt;&lt;title&gt;&gt;mode=&quot;block&quot;/&gt;
+&lt;/$list&gt;
+
 \end</pre>
 </div>
 <div created="20210806091213219" modified="20210806091951692" staff.position="Colonel Guest's Chief Assistant" tags="Character Staff [[Galens Institute]]" title="Maddison Kent">
