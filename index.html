@@ -10497,7 +10497,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210807031656604" list="[[CAD Template]] Template macro-helpers data-cad-abilities Home [[All Characters]] [[Valera Dent]]" modified="20210807111107187" title="$:/StoryList">
+<div created="20210807031656604" list="[[Other Character Template]] [[Student Template]] [[Staff Template]] [[CAD Template]] Template macro-helpers data-cad-abilities Home [[All Characters]] [[Valera Dent]]" modified="20210807111223563" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210807031841799" title="$:/theme">
@@ -11123,7 +11123,7 @@ The NOED module is installed at the temple and is about 8mm in diameter and abou
 <div caption="Template - Other Character" created="20210805190530474" modified="20210805190649826" tags="$:/tags/TextEditor/Snippet" title="Other Character Snippet">
 <pre>{{||Other Character Template}}</pre>
 </div>
-<div character.has_cad="no" created="20210805160504288" modified="20210806092705188" tags="Template" title="Other Character Template">
+<div character.has_cad="no" created="20210805160504288" modified="20210807111312584" tags="Template" title="Other Character Template">
 <pre>&lt;$list filter=&quot;[all[current]is[draft]]&quot; &gt;
 &lt;$fieldmangler&gt;
 &lt;$button message=&quot;tm-add-tag&quot; param=&quot;Character&quot;&gt;Add Character Tag&lt;/$button&gt;
@@ -11135,7 +11135,7 @@ The NOED module is installed at the temple and is about 8mm in diameter and abou
 &lt;$set name=&quot;isNotDraft&quot; filter=&quot;[all[current]is[draft]then[no]else[yes]]&quot; &gt;
 
 |!Name |{{!!title}} |
-|!Physical Description {{||Edit Description Button Template}} |{{||Physical Description Template}} |
+|!Physical Description |&lt;&lt;macro-edit-display-data-tiddler data-character-desc&gt;&gt; |
 |!Has CAD | &lt;$checkbox field=&quot;character.has_cad&quot; checked=&quot;yes&quot; unchecked=&quot;no&quot; disabled=&lt;&lt;isNotDraft&gt;&gt; /&gt; |
 &lt;/$set&gt;
 
