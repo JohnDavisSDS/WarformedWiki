@@ -327,6 +327,8 @@ Error message and password prompt
 
 <li>data-character-descriptions</li>
 
+<li>Draft of 'macro-helpers'</li>
+
 <li>Dyrk Reese</li>
 
 <li>Edit Abilities Button Template</li>
@@ -10499,7 +10501,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210807031656604" list="macro-helpers [[Abilities Template]] data-cad-abilities Home [[All Characters]]" modified="20210807051120701" title="$:/StoryList">
+<div created="20210807031656604" list="[[Draft of 'macro-helpers']] [[Abilities Template]] data-cad-abilities Home [[All Characters]]" modified="20210807051120701" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210807031841799" title="$:/theme">
@@ -10681,16 +10683,8 @@ Instructions for creating a personal token can be found [[here|https://docs.gith
 <pre>{{||Student Template}}
 * Received [[CAD]] at 2468 CAD Assignment Exam at [[Grandcrest Prep]]</pre>
 </div>
-<div created="20210805192201937" modified="20210806151854620" title="All Characters">
-<pre>\define compare-by-last-name()
-[&lt;currentTiddler&gt;search-replace:i:regexp[((?:.*\s)|^)(\w+$)],[$2, $1]]
-\end
-
-&lt;ul&gt;
-&lt;$list filter=&quot;[tag[Character]sortsub&lt;compare-by-last-name&gt;]&quot;&gt;
-&lt;li&gt;&lt;$link&gt;&lt;$text text={{{[&lt;currentTiddler&gt;search-replace:i:regexp[(.*)(\s\w+$)],[$2, $1]]}}}/&gt;&lt;/$link&gt;&lt;/li&gt;
-&lt;/$list&gt;
-&lt;/ul&gt;</pre>
+<div created="20210805192201937" modified="20210807095922916" title="All Characters">
+<pre>&lt;&lt;macro-link-list-by-last-name &quot;tag[Character]&quot;&gt;&gt;</pre>
 </div>
 <div cad.color.primary="" cad.color.secondary="" cad.color.vysetrium="" cad.name="" cad.type="" cad.weapon="" character.has_cad="yes" created="20210806064149109" modified="20210806064307279" tags="Character [[Other Character]]" title="Amina Laurent">
 <pre>{{||Other Character Template}}
@@ -10876,6 +10870,22 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
     &quot;Rama Guest&quot;: &quot;* Light brown skin\n* Long grey/back hair and beard\n* Broad shoulders\n* Dark eyes&quot;,
     &quot;Dyrk Reese&quot;: &quot;* Older\n* Deep Set Eyes\n* Shaved Head&quot;
 }</pre>
+</div>
+<div created="20210807091417362" draft.of="macro-helpers" draft.title="macro-helpers" modified="20210807095828799" tags="$:/tags/Macro" title="Draft of 'macro-helpers'">
+<pre>\define macro-regex-last-name-sort() ((?:.*\s)|^)([^ ]+$)
+\define macro-regex-last-name-sub() (.*)(\s[^ ]+$)
+
+\define macro-last-name-sort()
+[&lt;currentTiddler&gt;search-replace:i:regexp&lt;macro-regex-last-name-sort&gt;,[$2, $1]]
+\end
+
+\define macro-link-list-by-last-name(filter: &quot;tag[Filter Operators]&quot;)
+&lt;ul&gt;
+&lt;$list filter=&quot;[$filter$sortsub&lt;macro-last-name-sort&gt;]&quot;&gt;
+&lt;li&gt;&lt;$link&gt;&lt;$text text={{{[&lt;currentTiddler&gt;search-replace:i:regexp&lt;macro-regex-last-name-sub&gt;,[$2, $1]]}}}/&gt;&lt;/$link&gt;&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;
+\end</pre>
 </div>
 <div character.has_cad="yes" created="20210806090859937" modified="20210806091956946" staff.position="SCT Coordinator" tags="Character Staff [[Galens Institute]]" title="Dyrk Reese">
 <pre>{{||Staff Template}}
