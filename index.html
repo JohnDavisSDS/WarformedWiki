@@ -10860,7 +10860,7 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
     &quot;Dyrk Reese&quot;: &quot;* Older\n* Deep Set Eyes\n* Shaved Head&quot;
 }</pre>
 </div>
-<div character.has_cad="no" created="20210805142747908" draft.of="Staff Template" draft.title="Staff Template" modified="20210807125138622" staff.position="SOME_POSITION" tags="Template" title="Draft of 'Staff Template'">
+<div character.has_cad="no" created="20210805142747908" draft.of="Staff Template" draft.title="Staff Template" modified="20210807125249237" staff.position="SOME_POSITION" tags="Template" title="Draft of 'Staff Template'">
 <pre>&lt;$list filter=&quot;[all[current]is[draft]]&quot; &gt;
 &lt;$fieldmangler&gt;
 &lt;$button message=&quot;tm-add-tag&quot; param=&quot;Character&quot;&gt;Add Character Tag&lt;/$button&gt;
@@ -11065,7 +11065,7 @@ The military branch of the [[ISC]], largely independent due to the success of [[
 <pre>{{||Galens Student Template}}
 * Attended the [[Kanhurst School]] on [[Centauri-4]]</pre>
 </div>
-<div created="20210807091417362" modified="20210807125228809" tags="$:/tags/Macro" title="macro-helpers">
+<div created="20210807091417362" modified="20210807130151833" tags="$:/tags/Macro" title="macro-helpers">
 <pre>\whitespace trim
 
 \define macro-regex-last-name-sort() ((?:.*\s)|^)([^ ]+$)
@@ -11113,27 +11113,13 @@ The military branch of the [[ISC]], largely independent due to the success of [[
 
 \define macro-init-cad-fields-actions()
 
-&lt;$list filter=&quot;[has[cad.name]]&quot; &gt;
-&lt;$action-setfield cad.name=&quot; &quot; /&gt;
-&lt;/$list&gt;
-&lt;$list filter=&quot;[has[cad.type]]&quot; &gt;
-&lt;$action-setfield cad.type=&quot; &quot; /&gt;
-&lt;/$list&gt;
-&lt;$list filter=&quot;[has[cad.rank]]&quot; &gt;
-&lt;$action-setfield cad.rank=&quot; &quot; /&gt;
-&lt;/$list&gt;
-&lt;$list filter=&quot;[has[cad.color.primary]]&quot; &gt;
-&lt;$action-setfield cad.color.primary=&quot; &quot; /&gt;
-&lt;/$list&gt;
-&lt;$list filter=&quot;[has[cad.color.secondary]]&quot; &gt;
-&lt;$action-setfield cad.color.secondary=&quot; &quot; /&gt;
-&lt;/$list&gt;
-&lt;$list filter=&quot;[has[cad.color.vysetrium]]&quot; &gt;
-&lt;$action-setfield cad.color.vysetrium=&quot; &quot; /&gt;
-&lt;/$list&gt;
-&lt;$list filter=&quot;[has[cad.weapon]]&quot; &gt;
-&lt;$action-setfield cad.weapon=&quot; &quot; /&gt;
-&lt;/$list&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; param=&quot;cad.name&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; param=&quot;cad.type&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; param=&quot;cad.rank&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; param=&quot;cad.color.primary&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; param=&quot;cad.color.secondary&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; param=&quot;cad.color.vysetrium&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; param=&quot;cad.weapon&quot;/&gt;
 
 \end
 
