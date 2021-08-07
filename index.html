@@ -10860,7 +10860,7 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
     &quot;Dyrk Reese&quot;: &quot;* Older\n* Deep Set Eyes\n* Shaved Head&quot;
 }</pre>
 </div>
-<div character.has_cad="no" created="20210805142747908" draft.of="Staff Template" draft.title="Staff Template" modified="20210807123859345" staff.position="SOME_POSITION" tags="Template" title="Draft of 'Staff Template'">
+<div character.has_cad="no" created="20210805142747908" draft.of="Staff Template" draft.title="Staff Template" modified="20210807125102256" staff.position="SOME_POSITION" tags="Template" title="Draft of 'Staff Template'">
 <pre>&lt;$list filter=&quot;[all[current]is[draft]]&quot; &gt;
 &lt;$fieldmangler&gt;
 &lt;$button message=&quot;tm-add-tag&quot; param=&quot;Character&quot;&gt;Add Character Tag&lt;/$button&gt;
@@ -10875,7 +10875,7 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
 |!Physical Description |&lt;&lt;macro-edit-display-data-tiddler data-character-descriptions&gt;&gt; |
 |!School |[[Galens Institute]]|
 |!Position |{{!!staff.position}} |
-|!Has CAD | &lt;$checkbox field=&quot;character.has_cad&quot; checked=&quot;yes&quot; unchecked=&quot;no&quot; disabled=&lt;&lt;isNotDraft&gt;&gt; /&gt; |
+|!Has CAD | &lt;&lt;macro-has-cad-checkbox&gt;&gt; |
 
 &lt;$reveal type=&quot;match&quot; state=&quot;!!character.has_cad&quot; text=&quot;yes&quot;&gt;
 
@@ -11065,7 +11065,7 @@ The military branch of the [[ISC]], largely independent due to the success of [[
 <pre>{{||Galens Student Template}}
 * Attended the [[Kanhurst School]] on [[Centauri-4]]</pre>
 </div>
-<div created="20210807091417362" modified="20210807125008354" tags="$:/tags/Macro" title="macro-helpers">
+<div created="20210807091417362" modified="20210807125125967" tags="$:/tags/Macro" title="macro-helpers">
 <pre>\whitespace trim
 
 \define macro-regex-last-name-sort() ((?:.*\s)|^)([^ ]+$)
@@ -11139,7 +11139,7 @@ The military branch of the [[ISC]], largely independent due to the success of [[
 
 \define macro-has-cad-checkbox()
 
-&lt;$checkbox field=&quot;character.has_cad&quot; checked=&quot;yes&quot; unchecked=&quot;no&quot; disabled=&lt;&lt;macro-is-not-draft&gt;&gt; checkactions=&lt;&lt;macro-init-cad-fields-actions&gt;&gt; /&gt; |
+&lt;$checkbox field=&quot;character.has_cad&quot; checked=&quot;yes&quot; unchecked=&quot;no&quot; disabled=&lt;&lt;macro-is-not-draft&gt;&gt; checkactions=&lt;&lt;macro-init-cad-fields-actions&gt;&gt; /&gt;
 
 \end</pre>
 </div>
