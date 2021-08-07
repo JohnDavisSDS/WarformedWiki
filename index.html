@@ -325,8 +325,6 @@ Error message and password prompt
 
 <li>data-character-descriptions</li>
 
-<li>Draft of 'Staff Template'</li>
-
 <li>Dyrk Reese</li>
 
 <li>Edit Abilities Button Template</li>
@@ -10499,7 +10497,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210807031656604" list="macro-helpers [[Draft of 'Staff Template']] Home [[All Characters]]" modified="20210807124721127" title="$:/StoryList">
+<div created="20210807031656604" list="macro-helpers [[Staff Template]] Home [[All Characters]]" modified="20210807124721127" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210807031841799" title="$:/theme">
@@ -10859,31 +10857,6 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
     &quot;Rama Guest&quot;: &quot;* Light brown skin\n* Long grey/back hair and beard\n* Broad shoulders\n* Dark eyes&quot;,
     &quot;Dyrk Reese&quot;: &quot;* Older\n* Deep Set Eyes\n* Shaved Head&quot;
 }</pre>
-</div>
-<div character.has_cad="no" created="20210805142747908" draft.of="Staff Template" draft.title="Staff Template" modified="20210807130211588" staff.position="SOME_POSITION" tags="Template" title="Draft of 'Staff Template'">
-<pre>&lt;$list filter=&quot;[all[current]is[draft]]&quot; &gt;
-&lt;$fieldmangler&gt;
-&lt;$button message=&quot;tm-add-tag&quot; param=&quot;Character&quot;&gt;Add Character Tag&lt;/$button&gt;
-&lt;$button message=&quot;tm-add-tag&quot; param=&quot;Staff&quot;&gt;Add Staff Tag&lt;/$button&gt;
-&lt;$button message=&quot;tm-add-tag&quot; param=&quot;Galens Institute&quot;&gt;Add Galens Institute Tag&lt;/$button&gt;
-&lt;/$fieldmangler&gt;
-&lt;/$list&gt;
-
-! Staff Member Data
-
-|!Name |{{!!title}} |
-|!Physical Description |&lt;&lt;macro-edit-display-data-tiddler data-character-descriptions&gt;&gt; |
-|!School |[[Galens Institute]]|
-|!Position |{{!!staff.position}} |
-|!Has CAD | &lt;&lt;macro-has-cad-checkbox&gt;&gt; |
-
-&lt;$reveal type=&quot;match&quot; state=&quot;!!character.has_cad&quot; text=&quot;yes&quot;&gt;
-
-{{||CAD Template}}
-
-&lt;/$reveal&gt;
-
-!! Other Details</pre>
 </div>
 <div character.has_cad="yes" created="20210806090859937" modified="20210806091956946" staff.position="SCT Coordinator" tags="Character Staff [[Galens Institute]]" title="Dyrk Reese">
 <pre>{{||Staff Template}}
@@ -11275,7 +11248,7 @@ There are 3 formats within the SCT.
 <div created="20210805185616615" modified="20210807100234333" tags="" title="Staff List">
 <pre>&lt;&lt;macro-link-list-by-last-name &quot;tag[Staff]&quot;&gt;&gt;</pre>
 </div>
-<div character.has_cad="no" created="20210805142747908" modified="20210807111452500" staff.position="SOME_POSITION" tags="Template" title="Staff Template">
+<div created="20210805142747908" modified="20210807130947080" staff.position="SOME_POSITION" tags="Template" title="Staff Template">
 <pre>&lt;$list filter=&quot;[all[current]is[draft]]&quot; &gt;
 &lt;$fieldmangler&gt;
 &lt;$button message=&quot;tm-add-tag&quot; param=&quot;Character&quot;&gt;Add Character Tag&lt;/$button&gt;
@@ -11285,20 +11258,21 @@ There are 3 formats within the SCT.
 &lt;/$list&gt;
 
 ! Staff Member Data
-&lt;$set name=&quot;isNotDraft&quot; filter=&quot;[all[current]is[draft]then[no]else[yes]]&quot; &gt;
 
 |!Name |{{!!title}} |
 |!Physical Description |&lt;&lt;macro-edit-display-data-tiddler data-character-descriptions&gt;&gt; |
 |!School |[[Galens Institute]]|
 |!Position |{{!!staff.position}} |
-|!Has CAD | &lt;$checkbox field=&quot;character.has_cad&quot; checked=&quot;yes&quot; unchecked=&quot;no&quot; disabled=&lt;&lt;isNotDraft&gt;&gt; /&gt; |
-&lt;/$set&gt;
+|!Has CAD | &lt;&lt;macro-has-cad-checkbox&gt;&gt; |
 
 &lt;$reveal type=&quot;match&quot; state=&quot;!!character.has_cad&quot; text=&quot;yes&quot;&gt;
 
 {{||CAD Template}}
 
 &lt;/$reveal&gt;
+
+{{!!title}}
+
 !! Other Details</pre>
 </div>
 <div caption="Template - Staff" created="20210805190938689" modified="20210805191001492" tags="$:/tags/TextEditor/Snippet" title="Staff Template Snippet">
