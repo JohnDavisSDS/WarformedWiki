@@ -10499,7 +10499,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210807031656604" list="[[New Card Helper]] [[Other Character Template]] [[Staff Template]] [[Student Template]] macro-helpers Home [[All Characters]] [[Jack Benaly]]" modified="20210807131854406" title="$:/StoryList">
+<div created="20210807031656604" list="[[New Card Helper]] [[Staff Template]] [[Student Template]] macro-helpers Home [[All Characters]] [[Jack Benaly]]" modified="20210807131854406" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210807031841799" title="$:/theme">
@@ -11254,18 +11254,8 @@ There are 3 formats within the SCT.
 <div created="20210805185616615" modified="20210807100234333" tags="" title="Staff List">
 <pre>&lt;&lt;macro-link-list-by-last-name &quot;tag[Staff]&quot;&gt;&gt;</pre>
 </div>
-<div created="20210805142747908" modified="20210807130947080" staff.position="SOME_POSITION" tags="Template" title="Staff Template">
-<pre>&lt;$list filter=&quot;[all[current]is[draft]]&quot; &gt;
-&lt;$fieldmangler&gt;
-&lt;$button message=&quot;tm-add-tag&quot; param=&quot;Character&quot;&gt;Add Character Tag&lt;/$button&gt;
-&lt;$button message=&quot;tm-add-tag&quot; param=&quot;Staff&quot;&gt;Add Staff Tag&lt;/$button&gt;
-&lt;$button message=&quot;tm-add-tag&quot; param=&quot;Galens Institute&quot;&gt;Add Galens Institute Tag&lt;/$button&gt;
-&lt;/$fieldmangler&gt;
-&lt;/$list&gt;
-
-! Staff Member Data
-
-|!Name |{{!!title}} |
+<div created="20210805142747908" modified="20210807132335117" staff.position="SOME_POSITION" tags="Template" title="Staff Template">
+<pre>|!Name |{{!!title}} |
 |!Physical Description |&lt;&lt;macro-edit-display-data-tiddler data-character-descriptions&gt;&gt; |
 |!School |[[Galens Institute]]|
 |!Position |{{!!staff.position}} |
