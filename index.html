@@ -11065,8 +11065,21 @@ A shared dormitory in the first-year Kanes building
 <pre>{{||Galens Student Template}}
 * Attended the [[Kanhurst School]] on [[Centauri-4]]</pre>
 </div>
-<div created="20210807091417362" modified="20210807094412636" tags="$:/tags/Macro" title="macro-helpers">
-<pre></pre>
+<div created="20210807091417362" modified="20210807095826927" tags="$:/tags/Macro" title="macro-helpers">
+<pre>\define macro-regex-last-name-sort() ((?:.*\s)|^)([^ ]+$)
+\define macro-regex-last-name-sub() (.*)(\s[^ ]+$)
+
+\define macro-last-name-sort()
+[&lt;currentTiddler&gt;search-replace:i:regexp&lt;macro-regex-last-name-sort&gt;,[$2, $1]]
+\end
+
+\define macro-link-list-by-last-name(filter: &quot;tag[Filter Operators]&quot;)
+&lt;ul&gt;
+&lt;$list filter=&quot;[$filter$sortsub&lt;macro-last-name-sort&gt;]&quot;&gt;
+&lt;li&gt;&lt;$link&gt;&lt;$text text={{{[&lt;currentTiddler&gt;search-replace:i:regexp&lt;macro-regex-last-name-sub&gt;,[$2, $1]]}}}/&gt;&lt;/$link&gt;&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;
+\end</pre>
 </div>
 <div created="20210806091213219" modified="20210806091951692" staff.position="Colonel Guest's Chief Assistant" tags="Character Staff [[Galens Institute]]" title="Maddison Kent">
 <pre>{{||Staff Template}}
