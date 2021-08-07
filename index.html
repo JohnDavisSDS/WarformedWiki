@@ -395,6 +395,8 @@ Error message and password prompt
 
 <li>modal-edit-description</li>
 
+<li>New Card Helper</li>
+
 <li>NOED</li>
 
 <li>Other Character</li>
@@ -10497,7 +10499,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210807031656604" list="[[Other Character Template]] [[Staff Template]] [[Student Template]] macro-helpers Home [[All Characters]]" modified="20210807131003050" title="$:/StoryList">
+<div created="20210807031656604" list="[[New Card Helper]] [[Other Character Template]] [[Staff Template]] [[Student Template]] macro-helpers Home [[All Characters]] [[Jack Benaly]]" modified="20210807131854406" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210807031841799" title="$:/theme">
@@ -11133,6 +11135,22 @@ MIND conducts the 3^^rd^^ and final portion of the exam to determine the psychol
 </div>
 <div created="20210805214801262" footer="&lt;$button message=&quot;tm-close-tiddler&quot;&gt;Close&lt;/$button&gt;" modified="20210806000801000" subtitle="Edit the description for &lt;&lt;character&gt;&gt;" tags="Modal" title="modal-edit-description">
 <pre>Description: &lt;$edit-text tiddler='data-character-descriptions' index=&lt;&lt;character&gt;&gt; placeholder='Enter a description' /&gt;</pre>
+</div>
+<div created="20210807131216155" modified="20210807132244351" tags="" title="New Card Helper">
+<pre>&lt;$button&gt;
+&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; tags=&quot;Character [[Other Character]]&quot; text=&quot;{{||Other Character Template}}&quot; /&gt;
+New &quot;Other Character&quot;
+&lt;/$button&gt;
+
+&lt;$button&gt;
+&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; tags=&quot;Character Staff [[Galens Institute]]&quot; text=&quot;{{||Staff Template}}&quot; staff.position=&quot;&quot; /&gt;
+New Staff
+&lt;/$button&gt;
+
+&lt;$button&gt;
+&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; tags=&quot;Character Student [[Galens Institute]]&quot; text=&quot;{{||Galens Student Template}}&quot; student.class_block=&quot;&quot; cad.name=&quot;&quot; cad.type=&quot;&quot; cad.rank=&quot;&quot; cad.color.primary=&quot;&quot; cad.color.secondary=&quot;&quot; cad.color.vysetrium=&quot;&quot; cad.weapon=&quot;&quot; /&gt;
+New Student
+&lt;/$button&gt;</pre>
 </div>
 <div created="20210805202224484" modified="20210806142724299" tags="Term" title="NOED">
 <pre>A neuro-optic heads up display with data shown directly on the retina. Despite neuro-optic implying it interfaces with the optic nerve therefore transmitting data to the brain without involving the eye itself, use of the NOED appears to be visible to other people in the subject's eyes.
