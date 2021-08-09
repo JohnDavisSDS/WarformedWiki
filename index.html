@@ -219,6 +219,8 @@ Error message and password prompt
 
 <li>$:/state/plugin-info--270617185-$:/themes/tiddlywiki/centralised</li>
 
+<li>$:/state/plugin-info-1037762562-$:/plugins/tiddlywiki/qrcode---1012569492</li>
+
 <li>$:/state/plugin-info-1184017622-$:/themes/tiddlywiki/centralised</li>
 
 <li>$:/state/showeditpreview</li>
@@ -236,6 +238,8 @@ Error message and password prompt
 <li>$:/state/tab--959111941</li>
 
 <li>$:/state/tab-1749438307</li>
+
+<li>$:/state/tab-2018186588</li>
 
 <li>$:/state/tab-2065006209</li>
 
@@ -328,6 +332,8 @@ Error message and password prompt
 <li>Daniel Weber</li>
 
 <li>Data</li>
+
+<li>Data Link Plans</li>
 
 <li>data-cad-abilities</li>
 
@@ -10565,6 +10571,9 @@ Error message and password prompt
 <div created="20210807031905894" modified="20210807031913740" title="$:/state/plugin-info--270617185-$:/themes/tiddlywiki/centralised">
 <pre>yes</pre>
 </div>
+<div created="20210809021220144" modified="20210809032730741" title="$:/state/plugin-info-1037762562-$:/plugins/tiddlywiki/qrcode---1012569492">
+<pre>readme</pre>
+</div>
 <div created="20210807031950102" modified="20210807031951254" title="$:/state/plugin-info-1184017622-$:/themes/tiddlywiki/centralised">
 <pre>yes</pre>
 </div>
@@ -10592,6 +10601,9 @@ Error message and password prompt
 <div created="20210805142156812" modified="20210808040029065" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
+<div created="20210809021224934" modified="20210809021235253" title="$:/state/tab-2018186588">
+<pre>$:/plugins/tiddlywiki/qrcode/MakeWifiQR</pre>
+</div>
 <div created="20210806035841312" modified="20210807033424835" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
@@ -10602,9 +10614,9 @@ Error message and password prompt
 <pre>$:/core/ui/SideBar/Tools</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>yes</pre>
+<pre>no</pre>
 </div>
-<div created="20210807031656604" list="$:/ControlPanel data-character-descriptions Home [[New Card Helper]] Sense Kay Leron [[All Characters]]" modified="20210809021143803" title="$:/StoryList">
+<div created="20210809021211425" list="[[Data Link Plans]] data-character-descriptions $:/ControlPanel $:/plugins/tiddlywiki/qrcode Home [[All Characters]] [[Aria Laurent]]" modified="20210809021822867" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210807031841799" title="$:/theme">
@@ -10799,7 +10811,7 @@ Instructions for creating a personal token can be found [[here|https://docs.gith
 
 [[CAD]] technology was adapted from archon tech salvaged from the battlefields.</pre>
 </div>
-<div cad.color.primary="" cad.color.secondary="" cad.color.vysetrium="" cad.name="" cad.type="" cad.weapon="" created="20210806062059718" modified="20210807152239665" tags="Student Character [[Galens Institute]] [[Summer 16]] 1-A" title="Aria Laurent">
+<div cad.color.primary="" cad.color.secondary="" cad.color.vysetrium="" cad.name="" cad.type="" cad.weapon="" created="20210806062059718" modified="20210809021813088" tags="Student Character [[Galens Institute]] [[Summer 16]] 1-A" title="Aria Laurent">
 <pre>{{||Galens Student Template}}
 * Lives on an estate in static orbit over [[Astra-3]]
 * Father: [[Carmen Laurent]]
@@ -10942,6 +10954,24 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
 <div color="#ff6f00" created="20210805194343867" modified="20210805194414452" title="Data">
 <pre></pre>
 </div>
+<div created="20210809032933232" modified="20210809034551781" tags="" title="Data Link Plans">
+<pre>! data-link-field
+A macro that takes an index name and an optional textarea switch, default to input.
+
+!!Behavior
+If the current tiddler does not have a `uuid` field or there is not a data tiddler named `$:/datalink/&lt;&lt;uuid&gt;&gt;`, display a &quot;Add Data Link&quot; button that will add both of those or whichever is missing.
+
+If not in edit mode, transclude the value in the linked data tiddler and index name.
+
+If in edit, display a single table row with the first cell having an edit-text widget linked to the the data and the second cell having a transclude.
+
+! get-uuid-v4
+A macro with no arguments that returns a new v4 uuid
+
+! Hooks
+!! th-deleting-tiddler
+Check for other tiddlers with the same `uuid` field value. If there are none, delete the `$:/datalink/&lt;&lt;uuid&gt;&gt;` data tiddler</pre>
+</div>
 <div created="20210805183548955" modified="20210806120537573" tags="Data" title="data-cad-abilities" type="application/json">
 <pre>{
     &quot;Alex Rightor&quot;: &quot;* [[Magnetic Hunt]]\n* [[Overclock]]&quot;,
@@ -10953,14 +10983,14 @@ This site makes use of [[TiddlyWiki|https://tiddlywiki.com/]] software also unde
     &quot;Lenora James-May&quot;: &quot;* [[Arsenal Shift]]&quot;
 }</pre>
 </div>
-<div created="20210805204334617" modified="20210808070221599" tags="Data" title="data-character-descriptions" type="application/json">
+<div created="20210805204334617" modified="20210809021808119" tags="Data" title="data-character-descriptions" type="application/json">
 <pre>{
     &quot;Ansley Kosh&quot;: &quot;* Orangish Eyes&quot;,
     &quot;Lee Jackson&quot;: &quot;* Broad shoulders\n* Black hair with red slashes\n* Blue eyes\n* Perfect features&quot;,
     &quot;Reidon Ward&quot;: &quot;* White hair\n* 5'7\&quot;\n* Numerous scars from surgeries&quot;,
     &quot;Viviana Arada&quot;: &quot;* Curly brown hair\n* Blue eyes\n* 5'11\&quot;\n* 165 lb&quot;,
     &quot;William Errie&quot;: &quot;* 6'4\n* 232 lb&quot;,
-    &quot;Aria Laurent&quot;: &quot;* Auburn Hair\n* Green Eyes&quot;,
+    &quot;Aria Laurent&quot;: &quot;* Auburn Hair \&quot;shaggy\&quot;\n* Green Eyes&quot;,
     &quot;Salista Ethalees Laurent&quot;: &quot;* Auburn Hair\n* Golden Eyes&quot;,
     &quot;Amina Laurent&quot;: &quot;* Auburn Hair&quot;,
     &quot;Albert Connelly&quot;: &quot;* Tall\n* Thin\n* Cropped, greying beard&quot;,
