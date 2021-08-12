@@ -345,6 +345,8 @@ Error message and password prompt
 
 <li>data-character-descriptions</li>
 
+<li>Draft of 'macro-helpers'</li>
+
 <li>Dyrk Reese</li>
 
 <li>Edit Abilities Button Template</li>
@@ -10625,7 +10627,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210812063858352" list="[[Summer 16]] 1-C 1-A Home [[All Characters]] [[New Card Helper]]" modified="20210812064032434" title="$:/StoryList">
+<div created="20210812063858352" list="[[Draft of 'macro-helpers']] 1-C 1-A Home [[All Characters]] [[New Card Helper]]" modified="20210812064556766" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210805142200162" modified="20210807031841799" title="$:/theme">
@@ -10766,8 +10768,13 @@ Error message and password prompt
 <div color="#5fddbe" created="20210807151838458" modified="20210807151903784" title="1-A">
 <pre></pre>
 </div>
-<div color="#5fddbe" created="20210812063945928" modified="20210812063945928" title="1-C">
-<pre></pre>
+<div color="#5fddbe" created="20210812063945928" modified="20210812064758779" title="1-C">
+<pre>One of the 5 class blocks into which students are divided to share classes.
+
+!!!Block Students
+&lt;$tiddler tiddler={{{ [all[current]is[draft]then{!!draft.of}else&lt;currentTiddler&gt;] }}}&gt;
+&lt;&lt;macro-link-list-by-last-name &quot;tag&lt;currentTiddler&gt;&quot;&gt;&gt;
+&lt;/$tiddler&gt;</pre>
 </div>
 <div color="#14bddb" created="20210806121036785" modified="20210806121249489" tags="[[CAD Term]] Term" title="Ability">
 <pre>Abilities are special capabilities of your [[CAD]] typically added during an evolution.
@@ -11027,6 +11034,70 @@ Check for other tiddlers with the same `uuid` field value. If there are none, de
     &quot;Sense&quot;: &quot;* Bald&quot;,
     &quot;Candace Voss&quot;: &quot;* Squat\n* Dark eyes\n* Mousy grey hair&quot;
 }</pre>
+</div>
+<div created="20210807091417362" draft.of="macro-helpers" draft.title="macro-helpers" modified="20210812064558714" tags="$:/tags/Macro" title="Draft of 'macro-helpers'">
+<pre>\whitespace trim
+
+\define macro-regex-last-name-sort() ((?:.*\s)|^)([^ ]+$)
+\define macro-regex-last-name-sub() (.*)(\s[^ ]+$)
+
+\define macro-last-name-sort()
+[&lt;currentTiddler&gt;search-replace:i:regexp&lt;macro-regex-last-name-sort&gt;,[$2, $1]]
+\end
+
+\define macro-link-list-by-last-name(filter: &quot;tag[Filter Operators]&quot;)
+&lt;ul&gt;
+&lt;$list filter=&quot;[$filter$sortsub&lt;macro-last-name-sort&gt;]&quot;&gt;
+&lt;li&gt;&lt;$link&gt;&lt;$text text={{{[&lt;currentTiddler&gt;search-replace:i:regexp&lt;macro-regex-last-name-sub&gt;,[$2, $1]]}}}/&gt;&lt;/$link&gt;&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;
+\end
+
+\define macro-data-tiddler-index-by-title(dataTiddler)
+&lt;$list filter=&quot;[all[current]is[draft]get[draft.title]]&quot; variable=&quot;title&quot; &gt;
+&lt;$transclude tiddler=&quot;$dataTiddler$&quot; index=&lt;&lt;title&gt;&gt;mode=&quot;block&quot;/&gt;
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[all[current]!is[draft]get[title]]&quot; variable=&quot;title&quot; &gt;
+&lt;$transclude tiddler=&quot;$dataTiddler$&quot; index=&lt;&lt;title&gt;&gt;mode=&quot;block&quot;/&gt;
+&lt;/$list&gt;
+\end
+
+\define macro-edit-display-data-tiddler(dataTiddler)
+
+&lt;$list filter=&quot;[all[current]is[draft]get[draft.title]]&quot; variable=&quot;title&quot; &gt;
+&lt;$edit-text tiddler=&quot;$dataTiddler$&quot; index=&lt;&lt;title&gt;&gt; /&gt;
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[all[current]!is[draft]get[title]]&quot; variable=&quot;title&quot; &gt;
+&lt;$transclude tiddler=&quot;$dataTiddler$&quot; index=&lt;&lt;title&gt;&gt;mode=&quot;block&quot;/&gt;
+&lt;/$list&gt;
+
+\end
+
+\define macro-is-not-draft()
+&lt;$list filter=&quot;[all[current]is[draft]then[no]else[yes]]&quot; variable=&quot;isNotDraft&quot;&gt;
+&lt;&lt;isNotDraft&gt;&gt;
+&lt;/$list&gt;
+\end
+
+\define macro-init-cad-fields-actions()
+
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; $param=&quot;cad.name&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; $param=&quot;cad.type&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; $param=&quot;cad.rank&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; $param=&quot;cad.color.primary&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; $param=&quot;cad.color.secondary&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; $param=&quot;cad.color.vysetrium&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-field&quot; $param=&quot;cad.weapon&quot;/&gt;
+
+\end
+
+\define macro-has-cad-checkbox()
+
+&lt;$checkbox field=&quot;character.has_cad&quot; checked=&quot;yes&quot; unchecked=&quot;no&quot; disabled=&lt;&lt;macro-is-not-draft&gt;&gt; checkactions=&lt;&lt;macro-init-cad-fields-actions&gt;&gt; /&gt;
+
+\end</pre>
 </div>
 <div character.has_cad="yes" created="20210806090859937" modified="20210806091956946" staff.position="SCT Coordinator" tags="Character Staff [[Galens Institute]]" title="Dyrk Reese">
 <pre>{{||Staff Template}}
